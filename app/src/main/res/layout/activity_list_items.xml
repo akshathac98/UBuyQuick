@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListItemsActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_products"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_head1"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="4dp"
+        android:layout_below="@id/rv_products"
+        android:text="Buy 0 Products: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_checkout"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_head1"
+        android:text="Checkout"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:id="@+id/tv_head2"
+        android:textSize="16sp"
+        android:layout_marginStart="4dp"
+        android:layout_below="@id/btn_checkout"
+        android:text="Create New List With 0 Products"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_yes"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_head2"
+        android:text="Yes"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:id="@+id/tv_head3"
+        android:textSize="16sp"
+        android:layout_marginStart="4dp"
+        android:layout_below="@id/btn_yes"
+        android:text="Add 0 Products to Saved List"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_head3"
+        android:text="Yes"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

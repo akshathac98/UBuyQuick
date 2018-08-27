@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <CheckBox
+        android:id="@+id/cb_selected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="4dp" />
+
+    <TextView
+        android:id="@+id/tv_product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="5dp"
+        android:layout_toStartOf="@id/tv_product_mrp"
+        android:layout_toEndOf="@id/cb_selected"
+        android:text="TATA Salt Iodized 5KG"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_product_mrp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="20dp"
+        android:layout_toEndOf="@id/img_product"
+        android:layout_toStartOf="@id/tv_product_quantity"
+        android:text="19"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/tv_product_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="5dp"
+        android:layout_toStartOf="@id/et_quantity"
+        android:text="QTY"
+        android:textSize="12sp" />
+
+
+    <EditText
+        android:id="@+id/et_quantity"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@id/btn_plus"
+        android:text="1"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <View
+        android:background="@color/colorPrimary"
+        android:layout_below="@id/et_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp" />
+
+</RelativeLayout>

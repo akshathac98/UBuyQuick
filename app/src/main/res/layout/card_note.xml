@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_head_name"
+            android:layout_marginTop="5dp"
+            android:text="Name :"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:text="Bharat Kumar"
+            android:textAlignment="textStart"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            android:textSize="16sp"
+            android:layout_toStartOf="@id/btn_edit"
+            android:layout_alignStart="@id/tv_shop"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_toEndOf="@id/tv_head_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_head_shop"
+            android:layout_marginTop="5dp"
+            android:text="Shop :"
+            android:layout_below="@id/tv_head_name"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_shop"
+            android:layout_below="@id/tv_head_name"
+            android:text="Bhyrava Provisions"
+            android:layout_marginTop="5dp"
+            android:textSize="16sp"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@id/btn_edit"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_alignStart="@id/tv_credit"
+            android:layout_toEndOf="@id/tv_head_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_head_credit"
+            android:text="Credit Balance :"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@id/tv_head_shop"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_credit"
+            android:layout_below="@id/tv_head_shop"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/tv_head_credit"
+            android:text="\u20B9329.0"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+<!--
+
+        <ImageButton
+            android:layout_alignParentEnd="true"
+            android:text="Clear"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/ic_dustbin"
+            android:id="@+id/btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+-->
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

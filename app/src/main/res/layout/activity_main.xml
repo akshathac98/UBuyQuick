@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true">
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@android:color/black"
+            android:layout_marginStart="8dp"
+            android:drawableEnd="@drawable/ic_nav_search"
+            android:drawablePadding="5dp"
+            android:hint="Search Shop" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_shops"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/et_search"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary">
+
+            <LinearLayout
+                android:id="@+id/layout1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/view">
+
+                <ImageButton
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/btn_shops"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_shop3"
+                    android:backgroundTint="@android:color/white" />
+
+                <TextView
+                    android:text="Shops"
+                    android:textColor="@android:color/white"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_toStartOf="@id/layout2"
+                android:background="@android:color/white" />
+
+            <LinearLayout
+                android:id="@+id/layout2"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <ImageButton
+                    android:id="@+id/btn_shoppinglist"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_list2"
+                    android:backgroundTint="@android:color/white" />
+
+                <TextView
+                    android:text="Lists"
+                    android:textColor="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/layout2"
+                android:background="@android:color/white" />
+
+            <LinearLayout
+                android:id="@+id/layout3"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/view2"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageButton
+                    android:id="@+id/btn_profile"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_profile2"
+                    android:backgroundTint="@android:color/white"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
+
+
+                <TextView
+                    android:text="Profile"
+                    android:textColor="@android:color/white"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img_user"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ic_user"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <TextView
+        android:layout_below="@id/img_user"
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:text="Ajay Srinivas"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="9008003968"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_mobile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="ajaysrinivas@gmail.com" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_below="@id/tv_email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
+        android:text="#233, Murugesh Nilaya, Hegganahalli, Near Nuthan School, Peenya 2nd Stage, Bangalore - 560091"
+        android:textAlignment="center" />
+
+    <ImageButton
+        android:id="@+id/btn_edit"
+        android:layout_margin="4dp"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/ic_nav_edit"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_above="@id/view1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/tv_address"
+        android:background="@color/colorAccent" />
+
+
+</RelativeLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ubuyquick.customer">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".auth.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".auth.VerifyOTPActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ProfileActivity"
+            android:label="Profile" />
+        <activity
+            android:name=".ShopsActivity"
+            android:label="Shops Near You" />
+        <activity
+            android:name=".LoadListActivity"
+            android:label="Saved Lists" />
+        <activity
+            android:name=".ShopActivity"
+            android:label="@string/title_activity_shop"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ShoppingListActivity"
+            android:label="List" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".auth.SignupActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CreateListActivity"
+            android:label="Create New List" />
+        <activity
+            android:name=".DeliveryOptionsActivity"
+            android:label="Delivery Options" />
+        <activity
+            android:name=".PaymentOptions"
+            android:label="Payment Options" />
+        <activity
+            android:name=".SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_splash"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ListItemsActivity" />
+        <activity
+            android:name=".SubCategoryActivity"
+            android:label="Sub Category" />
+        <activity
+            android:name=".CreditsActivity"
+            android:label="Credit Notes" />
+        <activity
+            android:name=".shop.InventoryProductsActivity"
+            android:label="Add Products to List" />
+        <activity
+            android:name=".AddressesActivity"
+            android:label="Address" />
+        <activity
+            android:name=".ContactUs"
+            android:label="Contact Us" />
+        <activity
+            android:name=".EditProfileActivity"
+            android:label="Edit Profile" />
+        <activity
+            android:name=".SelectShopActivity"
+            android:label="Select Shop" />
+        <activity android:name=".SelectListActivity"></activity>
+    </application>
+
+</manifest>

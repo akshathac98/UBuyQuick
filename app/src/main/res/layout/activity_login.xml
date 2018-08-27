@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    tools:context="com.ubuyquick.customer.auth.LoginActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/login"
+        android:textSize="55sp" />
+
+    <View
+        android:id="@+id/view3"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#c3c3c3"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/textView"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_centerVertical="true">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_mobile_number"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Mobile Number"
+            android:inputType="phone" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/button_rounded"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:layout_below="@id/textInputLayout"/>
+
+    <TextView
+        android:id="@+id/btn_signup"
+        android:text="Sign Up"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="54dp"
+        android:layout_below="@id/btn_login"/>
+</RelativeLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <android.support.v7.widget.CardView
+        app:cardUseCompatPadding="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".CreateListActivity">
+
+            <TextView
+                android:id="@+id/tv_head_add"
+                android:text="Start Adding Products to Your List"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_head_add"
+                android:orientation="vertical"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+            <AutoCompleteTextView
+                android:layout_marginStart="8dp"
+                android:id="@+id/et_typing"
+                android:layout_toStartOf="@id/btn_plus"
+                android:hint="Start typing..."
+                android:layout_marginTop="4dp"
+                android:layout_below="@id/rv_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageButton
+                android:id="@+id/btn_plus"
+                android:visibility="invisible"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/ic_plus"
+                android:layout_alignBottom="@id/et_typing"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:text="Save List"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</android.support.v4.widget.NestedScrollView>
