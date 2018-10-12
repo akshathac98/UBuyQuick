@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +47,8 @@ public class InventoryProductAdapter extends RecyclerView.Adapter<InventoryProdu
         this.products = new ArrayList<>();
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
+        ImageLoader.getInstance().init(new UniversalImageLoader(context).getConfig());
+
     }
 
     public void setProducts(List<MainSearchProduct> products) {
@@ -59,6 +62,7 @@ public class InventoryProductAdapter extends RecyclerView.Adapter<InventoryProdu
         private TextView tv_product_name;
         private TextView tv_product_mrp;
         private TextView tv_product_measure;
+        private ImageView img_product;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -66,6 +70,8 @@ public class InventoryProductAdapter extends RecyclerView.Adapter<InventoryProdu
             this.tv_product_name = (TextView) itemView.findViewById(R.id.tv_product_name);
             this.tv_product_mrp = (TextView) itemView.findViewById(R.id.tv_product_mrp);
             this.tv_product_measure= (TextView) itemView.findViewById(R.id.tv_product_measure);
+            this.img_product= (ImageView) itemView.findViewById(R.id.tv_product_image);
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -77,9 +83,11 @@ public class InventoryProductAdapter extends RecyclerView.Adapter<InventoryProdu
                     View viewInflated = LayoutInflater.from(context).inflate(R.layout.dialog_product_details, null, false);
                     final TextView tv_name = (TextView) viewInflated.findViewById(R.id.tv_name);
                     final TextView tv_mrp = (TextView) viewInflated.findViewById(R.id.tv_price);
+                    final ImageView tv_image = (ImageView) viewInflated.findViewById(R.id.tv_image);
                     final TextView tv_measure = (TextView) viewInflated.findViewById(R.id.tv_measure);
                     final EditText et_quantity = (EditText) viewInflated.findViewById(R.id.et_quantity);
 
+                    UniversalImageLoader.setImage(searchProduct.getProductUrl(), tv_image);
                     tv_name.setText(searchProduct.getProductName());
                     tv_measure.setText(searchProduct.getProductMeasure());
                     tv_mrp.setText("\u20B9" + searchProduct.getProductMrp());
@@ -108,6 +116,7 @@ public class InventoryProductAdapter extends RecyclerView.Adapter<InventoryProdu
         }
 
         public void bind(MainSearchProduct product) {
+            UniversalImageLoader.setImage(product.getProductUrl(), this.img_product);
             tv_product_name.setText(product.getProductName());
             tv_product_measure.setText(product.getProductMeasure());
             tv_product_mrp.setText(product.getProductMrp() + "");

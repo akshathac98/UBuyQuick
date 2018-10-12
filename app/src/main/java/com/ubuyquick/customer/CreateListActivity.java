@@ -166,14 +166,14 @@ public class CreateListActivity extends AppCompatActivity {
 */
 
                 HashMap<String, String> headerMap = new HashMap<>();
-                headerMap.put("Authorization", Credentials.basic("elastic", "TI3gJiW05AD33tp4v707Xq3d"));
+                headerMap.put("Authorization", Credentials.basic("elastic", "IcORsWAWIOYtaZLNpJgbUvw1"));
 
                 HashMap<String, String> queryMap = new HashMap<>();
                 queryMap.put("q", "Products:*" + s.toString() + "*");
 //                queryMap.put("from", "0");
 //                queryMap.put("size", "6");
 
-                AndroidNetworking.get("https://7e47bc74074e44bb816d48b50c20253d.ap-southeast-1.aws.found.io/_search")
+                AndroidNetworking.get("https://08465455b9e04080ada3e4855fc4fc86.ap-southeast-1.aws.found.io:9243/ubq-has/_search")
                         .addQueryParameter(queryMap)
                         .addHeaders(headerMap)
                         .build().getAsJSONObject(new JSONObjectRequestListener() {
@@ -185,10 +185,11 @@ public class CreateListActivity extends AppCompatActivity {
                                 JSONObject productObj = productsArray.getJSONObject(i);
                                 String product_name = productObj.getJSONObject("_source").getString("Products");
                                 String product_measure = productObj.getJSONObject("_source").getString("Measure");
+                                String image_url = productObj.getJSONObject("_source").getString("Url");
                                 double product_mrp = productObj.getJSONObject("_source").getDouble("Price");
 
                                 priceList.put(product_name, productObj.getJSONObject("_source").getDouble("Price"));
-                                searchProducts.add(new MainSearchProduct(product_name, product_mrp, product_measure, 1));
+                                searchProducts.add(new MainSearchProduct(product_name, product_mrp, product_measure, 1, image_url));
                             }
                             searchAdapter.notifyDataSetChanged();
                         } catch (JSONException e) {

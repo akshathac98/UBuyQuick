@@ -13,7 +13,9 @@
         <ImageView
             android:id="@+id/img_product"
             android:layout_width="90dp"
-            android:layout_height="125dp" />
+            android:layout_height="125dp"
+            android:layout_margin="4dp"
+            android:padding="2dp"/>
 
         <TextView
             android:id="@+id/tv_product_name"

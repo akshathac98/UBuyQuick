@@ -11,15 +11,19 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.squareup.picasso.Picasso;
 import com.ubuyquick.customer.R;
 import com.ubuyquick.customer.model.MainSearchProduct;
 import com.ubuyquick.customer.model.NewListProduct;
 import com.ubuyquick.customer.model.ShopProduct;
+import com.ubuyquick.customer.utils.UniversalImageLoader;
 
 import java.util.HashMap;
 import java.util.List;
@@ -51,6 +55,8 @@ public class MainSearchAdapter2 extends ArrayAdapter {
         this.db = FirebaseFirestore.getInstance();
         this.itemLayout = resource;
         this.shop_id = shop_id;
+        ImageLoader.getInstance().init(new UniversalImageLoader(context).getConfig());
+
 
     }
 
@@ -62,10 +68,19 @@ public class MainSearchAdapter2 extends ArrayAdapter {
         TextView tv_product_name = convertView.findViewById(R.id.tv_product_name);
         TextView tv_product_mrp = convertView.findViewById(R.id.tv_product_mrp);
         TextView tv_product_measure = convertView.findViewById(R.id.tv_product_measure);
+        //TODO 2
+        ImageView tv_product_image = convertView.findViewById(R.id.tv_product_image);
 
         tv_product_name.setText(getItem(position).getProductName());
         tv_product_mrp.setText("MRP: \u20B9" + getItem(position).getProductMrp());
         tv_product_measure.setText(getItem(position).getProductMeasure());
+        //TODO 2.2
+//        Picasso.get()//.load(url)
+//                .load(getItem(position).getProductUrl())
+//                .placeholder(android.R.color.white).error(android.R.color.white).into(tv_product_image);
+
+        UniversalImageLoader.setImage(getItem(position).getProductUrl(), tv_product_image);
+
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +95,8 @@ public class MainSearchAdapter2 extends ArrayAdapter {
                 final TextView tv_mrp = (TextView) viewInflated.findViewById(R.id.tv_price);
                 final TextView tv_measure = (TextView) viewInflated.findViewById(R.id.tv_measure);
                 final EditText et_quantity = (EditText) viewInflated.findViewById(R.id.et_quantity);
+                //TODO 2.1
+                final ImageView tv_image = (ImageView) viewInflated.findViewById(R.id.tv_image);
 
                 tv_name.setText(searchProduct.getProductName());
                 tv_measure.setText(searchProduct.getProductMeasure());

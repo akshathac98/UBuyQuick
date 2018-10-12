@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "893027912879-39cbtf0trt0se459hcov5p149l8hkov2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ubuyquick.customer",
+            "certificate_hash": "407ffd25fddfab82a3183f2deb0424760e660fad"
+          }
+        },
+        {
           "client_id": "893027912879-hvi1l6kfcnfni25r9o2ekror4um61man.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -64,6 +72,14 @@
           "android_info": {
             "package_name": "com.ubuyquick.vendor",
             "certificate_hash": "ef10422d3f93d06332335d3bf2b7eef3ac0e7e5f"
+          }
+        },
+        {
+          "client_id": "893027912879-culr935m65430r2v36gq7lfd8qlldkin.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ubuyquick.vendor",
+            "certificate_hash": "407ffd25fddfab82a3183f2deb0424760e660fad"
           }
         },
         {

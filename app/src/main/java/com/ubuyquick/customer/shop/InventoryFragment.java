@@ -99,35 +99,33 @@ public class InventoryFragment extends Fragment {
 
     private Map<String, ArrayList<String>> subsubcategories;
 
-    private ArrayList<String> softdrinks;
+
     private ArrayList<String> juices;
     private ArrayList<String> teacoffee;
     private ArrayList<String> healthenergydrinks;
 
     private ArrayList<String> laundrydetergents;
     private ArrayList<String> dishwashers;
-    private ArrayList<String> dishwashinggelspowder;
-    private ArrayList<String> scrubbersclearningaids;
     private ArrayList<String> cleaners;
     private ArrayList<String> repellents;
     private ArrayList<String> poojaneeds;
-    private ArrayList<String> homecarfreshners;
+    private ArrayList<String> otherneeds;
 
     private ArrayList<String> bathbody;
     private ArrayList<String> haircare;
     private ArrayList<String> skincare;
     private ArrayList<String> oralcare;
-    private ArrayList<String> deosperfumes;
     private ArrayList<String> facecare;
     private ArrayList<String> femininehygeine;
     private ArrayList<String> shavingneeds;
     private ArrayList<String> healthwellness;
-    private ArrayList<String> cosmetics;
+
 
     private ArrayList<String> milkproducts;
-    private ArrayList<String> paneercurd;
+    private ArrayList<String> jamshoneyspreads;
     private ArrayList<String> buttercheese;
     private ArrayList<String> breakfastcereal;
+    private ArrayList<String> breakfastmixes;
 
     private ArrayList<String> biscuitscookies;
     private ArrayList<String> namkeensnacks;
@@ -137,15 +135,14 @@ public class InventoryFragment extends Fragment {
 
     private ArrayList<String> noodlesvermicelli;
     private ArrayList<String> saucesketchups;
-    private ArrayList<String> jamshoneyspreads;
     private ArrayList<String> pastasoups;
     private ArrayList<String> readymademealsmixes;
     private ArrayList<String> pickleschutneys;
     private ArrayList<String> cannedfrozenfood;
     private ArrayList<String> bakingdessertitems;
+    private ArrayList<String> cakesandpastries;
 
-    private ArrayList<String> babyfood;
-    private ArrayList<String> diaperswipes;
+
     private ArrayList<String> babyskinhaircare;
 
     private ArrayList<String> groceriesstaples;
@@ -154,9 +151,11 @@ public class InventoryFragment extends Fragment {
     private ArrayList<String> edibleoils;
     private ArrayList<String> gheevanaspathi;
     private ArrayList<String> spices;
-    private ArrayList<String> breakfastmixes;
-    private ArrayList<String> jamsspreads;
-    private ArrayList<String> readymasala;
+    private ArrayList<String> saltandsugar;
+    private ArrayList<String> fruitsandveg;
+
+    private ArrayList<String> petfood;
+
 
     private TextView tv_shop_name, tv_delivery, tv_minimum_order;
     private ImageButton btn_plus;
@@ -177,48 +176,37 @@ public class InventoryFragment extends Fragment {
         ads.add("");
         ads.add("");
 
-        softdrinks = new ArrayList<>();
-        softdrinks.add("Cans");
-        softdrinks.add("Bottles");
+
 
         juices = new ArrayList<>();
         juices.add("Concentrates");
         juices.add("Squash And Sharbat");
-        juices.add("Ayurvedic");
         juices.add("Bottles");
 
         teacoffee = new ArrayList<>();
         teacoffee.add("Tea");
         teacoffee.add("Coffee");
-        teacoffee.add("Dairy Whitener");
 
         healthenergydrinks = new ArrayList<>();
         healthenergydrinks.add("Chocolate And Health");
-        healthenergydrinks.add("Health Drinks");
-        healthenergydrinks.add("Energy Drinks");
-        healthenergydrinks.add("Water And Soda");
+
+
 
         laundrydetergents = new ArrayList<>();
         laundrydetergents.add("Detergent Powders");
         laundrydetergents.add("Liquid Detergents");
         laundrydetergents.add("Detergent Bars");
-        laundrydetergents.add("Laundry Additives");
+        laundrydetergents.add("Laundry Additive");
 
         dishwashers = new ArrayList<>();
         dishwashers.add("Dishwashing Bars");
         dishwashers.add("Dishwashing Gels");
-        dishwashers.add("Scrubbers");
-
-        dishwashinggelspowder = new ArrayList<>();
-        dishwashinggelspowder.add("Dishwashing Bars");
-
-        scrubbersclearningaids = new ArrayList<>();
-        scrubbersclearningaids.add("Dishwashing Bars");
+        dishwashers.add("Dishwashing Powder");
 
         cleaners = new ArrayList<>();
-        cleaners.add("Toilet Cleaners");
-        cleaners.add("Floor Cleaners");
-        cleaners.add("Multi-Purpose Cleaner");
+        cleaners.add("Toilet Cleaner");
+        cleaners.add("Floor Cleaner");
+        cleaners.add("MultiPurpose Cleaner");
 
         repellents = new ArrayList<>();
         repellents.add("Mosquito Repellents");
@@ -227,17 +215,18 @@ public class InventoryFragment extends Fragment {
 
         poojaneeds = new ArrayList<>();
         poojaneeds.add("Incense Sticks");
+        poojaneeds.add("Pooja Oils");
 
-        homecarfreshners = new ArrayList<>();
-        homecarfreshners.add("Air Fresheners");
-        homecarfreshners.add("Car Fresheners");
-        homecarfreshners.add("Shoe Care");
+        otherneeds = new ArrayList<>();
+        otherneeds.add("Batteries");
+        otherneeds.add("Trash Bags");
+
+
 
         bathbody = new ArrayList<>();
         bathbody.add("Body Wash");
         bathbody.add("Soaps");
         bathbody.add("Handwash");
-        bathbody.add("Sanitizer");
 
         haircare = new ArrayList<>();
         haircare.add("Hair Oil And Others");
@@ -248,30 +237,19 @@ public class InventoryFragment extends Fragment {
         skincare = new ArrayList<>();
         skincare.add("Body Lotions");
         skincare.add("Talc Powder");
-        skincare.add("Body Oils And Others");
-        skincare.add("Face Cream");
 
         oralcare = new ArrayList<>();
-        oralcare.add("Tooth Paste");
-        oralcare.add("Tooth Brush");
-        oralcare.add("Mouth Wash And Others");
-
-        deosperfumes = new ArrayList<>();
-        deosperfumes.add("Mens Deo");
-        deosperfumes.add("Womens Deo");
-        deosperfumes.add("Perfumes");
+        oralcare.add("Toothpaste");
+        oralcare.add("Toothbrush");
+        oralcare.add("Mouthwash And Others");
 
         facecare = new ArrayList<>();
         facecare.add("Face Wash");
-        facecare.add("Face Mask And Bleach");
-        facecare.add("Lip Care");
-        facecare.add("Face Wipes");
         facecare.add("Face Cream");
         facecare.add("More Face Products");
 
         femininehygeine = new ArrayList<>();
         femininehygeine.add("Sanitary Care");
-        femininehygeine.add("Fem Essentials");
         femininehygeine.add("Hair Removal");
 
         shavingneeds = new ArrayList<>();
@@ -281,46 +259,40 @@ public class InventoryFragment extends Fragment {
         shavingneeds.add("After Shave");
 
         healthwellness = new ArrayList<>();
-        healthwellness.add("Pain Relievers");
         healthwellness.add("Antiseptics");
         healthwellness.add("Other Otcs");
         healthwellness.add("Health Supplements");
-        healthwellness.add("Hand And Foot Care");
 
-        cosmetics = new ArrayList<>();
-        cosmetics.add("Eye Makeup");
-        cosmetics.add("Nail Colors");
-        cosmetics.add("Lip Color");
+
 
         milkproducts = new ArrayList<>();
-        milkproducts.add("Tetra Milk");
-        milkproducts.add("Specialty Milk");
         milkproducts.add("Lassi And Flavoured Milk And Milk Shakes");
         milkproducts.add("Cream And Whitener");
-
-        paneercurd = new ArrayList<>();
-        paneercurd.add("Paneer And Tofu");
-        paneercurd.add("Curd");
-        paneercurd.add("Yogurt");
 
         buttercheese = new ArrayList<>();
         buttercheese.add("Butter");
         buttercheese.add("Cheese");
-        buttercheese.add("Spreads");
 
         breakfastcereal = new ArrayList<>();
         breakfastcereal.add("Flakes");
-        breakfastcereal.add("Breakfast Bars");
         breakfastcereal.add("Oats");
         breakfastcereal.add("Muesli");
 
         breakfastmixes = new ArrayList<>();
-        breakfastmixes.add("Mixes");
-        breakfastmixes.add("Batter");
+        breakfastmixes.add("Breakfast Mixes");
+
+        jamshoneyspreads = new ArrayList<>();
+        jamshoneyspreads.add("Honey");
+        jamshoneyspreads.add("Jams And Marmalades");
+        jamshoneyspreads.add("Food Spreads");
+        jamshoneyspreads.add("Peanut Butter And Mayonnaise");
+        jamshoneyspreads.add("Dressing And Dips");
+
+
 
         biscuitscookies = new ArrayList<>();
         biscuitscookies.add("Healthy And Digestive");
-        biscuitscookies.add("Cream Biscuits And Wafers");
+        biscuitscookies.add("Cream Biscuits Cookies And Wafers");
         biscuitscookies.add("Sweet And Salty");
         biscuitscookies.add("Glucose And Marie");
 
@@ -328,47 +300,35 @@ public class InventoryFragment extends Fragment {
         namkeensnacks.add("Bhujia And Sev");
         namkeensnacks.add("Namkeen And Mixtures");
         namkeensnacks.add("Papad And Fryums");
-        namkeensnacks.add("Local Favourites");
 
         chipscrisps = new ArrayList<>();
-        chipscrisps.add("Potato Chips");
         chipscrisps.add("Crisps And Puffs");
-        chipscrisps.add("Tortillas And Nachos");
         chipscrisps.add("Popcorns");
 
         chocolatecandies = new ArrayList<>();
-        chocolatecandies.add("Chocolate Gift Packs");
         chocolatecandies.add("Chocolates");
-        chocolatecandies.add("Candies And Chewing Gums");
+        chocolatecandies.add("Candies");
 
         sweets = new ArrayList<>();
         sweets.add("Instant Mixes");
-        sweets.add("Sweet");
+        sweets.add("Sweets");
+
+
+
 
         noodlesvermicelli = new ArrayList<>();
         noodlesvermicelli.add("Instant Noodles");
-        noodlesvermicelli.add("Cup Noodles");
         noodlesvermicelli.add("Vermicelli");
 
         saucesketchups = new ArrayList<>();
         saucesketchups.add("Tomato Ketchup And Sauces");
         saucesketchups.add("Soya And Chilli Sauces");
-        saucesketchups.add("Other Sauces");
-
-        jamshoneyspreads = new ArrayList<>();
-        jamshoneyspreads.add("Honey");
-        jamshoneyspreads.add("Jams And Marmalades");
-        jamshoneyspreads.add("Food Spreads");
-        jamshoneyspreads.add("Peanut Butter And Mayonnaise");
-        jamshoneyspreads.add("Syrups");
-        jamshoneyspreads.add("Dressing And Dips");
 
         pastasoups = new ArrayList<>();
         pastasoups.add("Pasta");
         pastasoups.add("Soup");
 
         readymademealsmixes = new ArrayList<>();
-        readymademealsmixes.add("Breakfast Mixes");
         readymademealsmixes.add("Masala Mixes");
 
         pickleschutneys = new ArrayList<>();
@@ -377,30 +337,31 @@ public class InventoryFragment extends Fragment {
 
         cannedfrozenfood = new ArrayList<>();
         cannedfrozenfood.add("Canned Foods");
-        cannedfrozenfood.add("Vegetarian");
 
         bakingdessertitems = new ArrayList<>();
         bakingdessertitems.add("Baking Ingredients");
+        bakingdessertitems.add("Baking Soda");
 
-        babyfood = new ArrayList<>();
-        babyfood.add("Baby Food");
+        cakesandpastries = new ArrayList<>();
+        cakesandpastries.add("Cakes");
 
-        diaperswipes = new ArrayList<>();
-        diaperswipes.add("Diapers");
-        diaperswipes.add("Wipes");
+
 
         babyskinhaircare = new ArrayList<>();
         babyskinhaircare.add("Bathing Needs");
         babyskinhaircare.add("Body Care And Others");
 
+
+
         groceriesstaples = new ArrayList<String>();
-        groceriesstaples.add("Pulses");
         groceriesstaples.add("Atta And Other Flours");
+        groceriesstaples.add("Moong And Toor Dal");
+        groceriesstaples.add("Urad and Channa Dal");
+        groceriesstaples.add("Other Pulses");
 
         riceothergrains = new ArrayList<>();
         riceothergrains.add("Basmati");
         riceothergrains.add("Sonamasuri And Kolam");
-        riceothergrains.add("Ponni Rice");
         riceothergrains.add("Other Rice");
         riceothergrains.add("Poha");
         riceothergrains.add("Daliya");
@@ -412,77 +373,92 @@ public class InventoryFragment extends Fragment {
         dryfruits.add("Nuts And Seeds");
 
         edibleoils = new ArrayList<>();
-        edibleoils.add("Soyabean Oils");
         edibleoils.add("Sunflower Oils");
         edibleoils.add("Mustard Oils");
         edibleoils.add("Health Oils");
         edibleoils.add("Olive Oils");
-        edibleoils.add("Til Oil");
         edibleoils.add("Rice Bran Oil And Others");
 
         gheevanaspathi = new ArrayList<>();
         gheevanaspathi.add("Ghee");
+        gheevanaspathi.add("Vanaspathi");
 
         spices = new ArrayList<>();
         spices.add("Whole Spices");
         spices.add("Powdered Spices");
         spices.add("Ready Masala");
-        spices.add("Cooking Paste And Others");
 
-        readymasala = new ArrayList<>();
-        readymasala.add("Ready Masala");
+        saltandsugar = new ArrayList<>();
+        saltandsugar.add("Jaggery And Others");
+        saltandsugar.add("Salt");
+        saltandsugar.add("Sugar");
+
+        fruitsandveg = new ArrayList<>();
+        fruitsandveg.add("Fruits");
+        fruitsandveg.add("Vegetables");
+
+
+        petfood = new ArrayList<>();
+        petfood.add("Pigeon Food");
 
         subsubcategories = new HashMap<>();
-        subsubcategories.put("Soft Drinks", softdrinks);
+
         subsubcategories.put("Juice And Concentrates", juices);
         subsubcategories.put("Tea And Coffee", teacoffee);
         subsubcategories.put("Health And Energy Drinks", healthenergydrinks);
+
         subsubcategories.put("Laundry Detergents", laundrydetergents);
         subsubcategories.put("Dishwashers", dishwashers);
-        subsubcategories.put("Dishwashing Gels And Powder", dishwashinggelspowder);
-        subsubcategories.put("Scrubbing And Cleaning Aids", scrubbersclearningaids);
         subsubcategories.put("Cleaners", cleaners);
         subsubcategories.put("Repellents", repellents);
         subsubcategories.put("Pooja Needs", poojaneeds);
-        subsubcategories.put("Home And Car Fresheners", homecarfreshners);
+        subsubcategories.put("Other Needs", otherneeds);
+
+
         subsubcategories.put("Bath And Body", bathbody);
-        subsubcategories.put("Hair Care", haircare);
+        subsubcategories.put("Haircare", haircare);
         subsubcategories.put("Skin Care", skincare);
         subsubcategories.put("Oral Care", oralcare);
-        subsubcategories.put("Deos And Perfumes", deosperfumes);
         subsubcategories.put("Face Care", facecare);
         subsubcategories.put("Feminine Hygiene", femininehygeine);
         subsubcategories.put("Shaving Needs", shavingneeds);
         subsubcategories.put("Health And Wellness", healthwellness);
-        subsubcategories.put("Cosmetics", cosmetics);
+
+
         subsubcategories.put("Milk And Milk Products", milkproducts);
-        subsubcategories.put("Paneer And Curd", paneercurd);
         subsubcategories.put("Butter And Cheese", buttercheese);
         subsubcategories.put("Breakfast Cereal", breakfastcereal);
         subsubcategories.put("Breakfast Mixes And Batter", breakfastmixes);
+        subsubcategories.put("Jams Honey And Spreads", jamshoneyspreads);
+
         subsubcategories.put("Biscuits And Cookies", biscuitscookies);
         subsubcategories.put("Namkeen And Snacks", namkeensnacks);
         subsubcategories.put("Chips And Crisps", chipscrisps);
         subsubcategories.put("Chocolate And Candies", chocolatecandies);
         subsubcategories.put("Sweets", sweets);
+
         subsubcategories.put("Noodles And Vermicelli", noodlesvermicelli);
         subsubcategories.put("Sauces And Ketchups", saucesketchups);
-        subsubcategories.put("Jams Honey And Spreads", jamshoneyspreads);
         subsubcategories.put("Pasta And Soups", pastasoups);
         subsubcategories.put("Ready Made Meals And Mixes", readymademealsmixes);
         subsubcategories.put("Pickles And Chutneys", pickleschutneys);
         subsubcategories.put("Canned And Frozen Food", cannedfrozenfood);
         subsubcategories.put("Baking And Dessert Items", bakingdessertitems);
-        subsubcategories.put("Baby Food", babyfood);
-        subsubcategories.put("Diapers And Wipes", diaperswipes);
+        subsubcategories.put("Cakes And Pastries", cakesandpastries);
+
         subsubcategories.put("Baby Skin And Hair Care", babyskinhaircare);
+
         subsubcategories.put("Staples", groceriesstaples);
         subsubcategories.put("Rice And Other Grains", riceothergrains);
         subsubcategories.put("Dry Fruits", dryfruits);
         subsubcategories.put("Edible Oils", edibleoils);
         subsubcategories.put("Ghee And Vanaspathi", gheevanaspathi);
         subsubcategories.put("Spices", spices);
-        subsubcategories.put("Masala", readymasala);
+        subsubcategories.put("Salt And Sugar", saltandsugar);
+        subsubcategories.put("Fruits And Vegitables", fruitsandveg);
+
+        subsubcategories.put("Pet Food", petfood);
+
     }
 
     @Nullable
@@ -498,18 +474,19 @@ public class InventoryFragment extends Fragment {
         listDataChild = new HashMap<String, List<String>>();
 
         // Adding child data
-        listDataHeader.add("Groceries And Staples");
-        listDataHeader.add("Beverages");
-        listDataHeader.add("Household Needs");
-        listDataHeader.add("Personal Care");
+        listDataHeader.add("Grocery And Staples");
         listDataHeader.add("Breakfast And Dairy");
         listDataHeader.add("Biscuits Snacks And Chocolates");
+        listDataHeader.add("Beverages");
         listDataHeader.add("Noodles Sauces And Instant Food");
+        listDataHeader.add("Personal Care");
+        listDataHeader.add("Household Needs");
         listDataHeader.add("Baby And Kids");
+        listDataHeader.add("Pet Supplies");
 
         // Adding child data
         List<String> beverages = new ArrayList<String>();
-        beverages.add("Soft Drinks");
+
         beverages.add("Health And Energy Drinks");
         beverages.add("Tea And Coffee");
         beverages.add("Juice And Concentrates");
@@ -520,23 +497,21 @@ public class InventoryFragment extends Fragment {
         household.add("Cleaners");
         household.add("Repellents");
         household.add("Pooja Needs");
-        household.add("Home And Car Fresheners");
+        household.add("Other Needs");
 
         List<String> personal = new ArrayList<>();
         personal.add("Bath And Body");
-        personal.add("Hair Care");
+        personal.add("Haircare");
         personal.add("Skin Care");
         personal.add("Oral Care");
-        personal.add("Deos And Perfumes");
         personal.add("Face Care");
         personal.add("Feminine Hygiene");
         personal.add("Shaving Needs");
         personal.add("Health And Wellness");
-        personal.add("Cosmetics");
+
 
         List<String> breakfast = new ArrayList<>();
         breakfast.add("Milk And Milk Products");
-        breakfast.add("Paneer And Curd");
         breakfast.add("Butter And Cheese");
         breakfast.add("Breakfast Cereal");
         breakfast.add("Jams Honey And Spreads");
@@ -557,11 +532,13 @@ public class InventoryFragment extends Fragment {
         noodles.add("Pickles And Chutneys");
         noodles.add("Canned And Frozen Food");
         noodles.add("Baking And Dessert Items");
+        noodles.add("Cakes And Pastries");
 
         List<String> baby = new ArrayList<>();
-        baby.add("Baby Food");
-        baby.add("Diapers And Wipes");
         baby.add("Baby Skin And Hair Care");
+
+        List<String> pet = new ArrayList<>();
+        pet.add("Pet Food");
 
         final List<String> staples = new ArrayList<>();
         staples.add("Staples");
@@ -570,7 +547,8 @@ public class InventoryFragment extends Fragment {
         staples.add("Edible Oils");
         staples.add("Ghee And Vanaspathi");
         staples.add("Spices");
-        staples.add("Masala");
+        staples.add("Salt And Sugar");
+        staples.add("Fruits And Vegitables");
 
         listDataChild.put(listDataHeader.get(0), staples);
         listDataChild.put(listDataHeader.get(1), beverages);
@@ -653,14 +631,14 @@ public class InventoryFragment extends Fragment {
                 et_search.setAdapter(searchAdapter);
 
                 HashMap<String, String> headerMap = new HashMap<>();
-                headerMap.put("Authorization", Credentials.basic("elastic", "TI3gJiW05AD33tp4v707Xq3d"));
+                headerMap.put("Authorization", Credentials.basic("elastic", "IcORsWAWIOYtaZLNpJgbUvw1"));
 
                 HashMap<String, String> queryMap = new HashMap<>();
                 queryMap.put("q", "Products:*" + s.toString() + "*");
                 queryMap.put("from", "0");
                 queryMap.put("size", "50");
 
-                AndroidNetworking.get("https://7e47bc74074e44bb816d48b50c20253d.ap-southeast-1.aws.found.io/gkdb/_search")
+                AndroidNetworking.get("https://08465455b9e04080ada3e4855fc4fc86.ap-southeast-1.aws.found.io:9243/ubq-has/_search")
                         .addQueryParameter(queryMap)
                         .addHeaders(headerMap)
                         .build().getAsJSONObject(new JSONObjectRequestListener() {
@@ -676,10 +654,11 @@ public class InventoryFragment extends Fragment {
                                     JSONObject productObj = productsArray.getJSONObject(i);
                                     String product_name = productObj.getJSONObject("_source").getString("Products");
                                     String product_measure = productObj.getJSONObject("_source").getString("Measure");
+                                    String image_url = productObj.getJSONObject("_source").getString("Url");
                                     double product_mrp = productObj.getJSONObject("_source").getDouble("Price");
 
                                     priceList.put(product_name, productObj.getJSONObject("_source").getDouble("Price"));
-                                    searchProducts.add(new MainSearchProduct(product_name, product_mrp, product_measure, 1));
+                                    searchProducts.add(new MainSearchProduct(product_name, product_mrp, product_measure, 1, image_url));
                                 }
                                 searchAdapter.notifyDataSetChanged();
                             }
@@ -729,7 +708,7 @@ public class InventoryFragment extends Fragment {
                                     db.collection("customers").document(mAuth.getCurrentUser().getPhoneNumber().substring(3))
                                             .collection("shop_lists").document(shop_id).collection("lists").add(product);
                                     Toast.makeText(getContext(), "Added " + Integer.parseInt(et_quantity.getText().toString())
-                                             + " " + et_search.getText().toString(), Toast.LENGTH_SHORT).show();
+                                            + " " + et_search.getText().toString(), Toast.LENGTH_SHORT).show();
                                     et_search.setText("");
                                 }
                             }
