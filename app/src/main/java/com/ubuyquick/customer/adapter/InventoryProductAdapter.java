@@ -119,7 +119,7 @@ public class InventoryProductAdapter extends RecyclerView.Adapter<InventoryProdu
             UniversalImageLoader.setImage(product.getProductUrl(), this.img_product);
             tv_product_name.setText(product.getProductName());
             tv_product_measure.setText(product.getProductMeasure());
-            tv_product_mrp.setText(product.getProductMrp() + "");
+            tv_product_mrp.setText("\u20B9" + product.getProductMrp());
         }
     }
 

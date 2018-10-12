@@ -14,24 +14,22 @@
             android:id="@+id/img_product"
             android:layout_width="60dp"
             android:layout_height="80dp"
-            android:visibility="visible"
-            />
+            android:visibility="visible" />
 
         <RelativeLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content">
-
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
 
             <TextView
                 android:id="@+id/tv_product_name"
                 android:layout_width="match_parent"
-                android:layout_toStartOf="@id/tv_product_quantity"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toStartOf="@id/tv_product_quantity"
                 android:layout_toEndOf="@id/img_product"
                 android:text="TATA Salt Iodized 5KG"
                 android:textColor="@android:color/black"
@@ -43,8 +41,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_product_name"
-                android:layout_marginBottom="4dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginBottom="4dp"
                 android:text="MRP : \u20B9200" />
 
             <TextView
@@ -52,8 +50,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_product_name"
-                android:layout_marginBottom="4dp"
                 android:layout_marginStart="60dp"
+                android:layout_marginBottom="4dp"
                 android:layout_toEndOf="@id/tv_product_mrp"
                 android:text="200 GM" />
 
@@ -61,10 +59,10 @@
                 android:id="@+id/tv_product_quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
                 android:layout_marginStart="8dp"
-                android:layout_toEndOf="@id/img_product"
+                android:layout_marginEnd="20dp"
                 android:layout_toStartOf="@id/btn_delete"
+                android:layout_toEndOf="@id/img_product"
                 android:inputType="number"
                 android:text="21"
                 android:textColor="@android:color/black"
@@ -77,16 +75,15 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/img_product"
                 android:layout_alignParentEnd="true"
-                android:layout_marginBottom="10dp"
-                android:layout_marginEnd="4dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="10dp"
                 android:background="@android:drawable/ic_menu_close_clear_cancel"
                 android:backgroundTint="@android:color/holo_red_light"
                 android:textColor="@android:color/white" />
 
         </RelativeLayout>
     </LinearLayout>
-
 
 
 </android.support.v7.widget.CardView>

@@ -475,12 +475,12 @@ public class InventoryFragment extends Fragment {
 
         // Adding child data
         listDataHeader.add("Grocery And Staples");
+        listDataHeader.add("Beverages");
+        listDataHeader.add("Household Needs");
+        listDataHeader.add("Personal Care");
         listDataHeader.add("Breakfast And Dairy");
         listDataHeader.add("Biscuits Snacks And Chocolates");
-        listDataHeader.add("Beverages");
         listDataHeader.add("Noodles Sauces And Instant Food");
-        listDataHeader.add("Personal Care");
-        listDataHeader.add("Household Needs");
         listDataHeader.add("Baby And Kids");
         listDataHeader.add("Pet Supplies");
 
@@ -558,6 +558,7 @@ public class InventoryFragment extends Fragment {
         listDataChild.put(listDataHeader.get(5), biscuits);
         listDataChild.put(listDataHeader.get(6), noodles);
         listDataChild.put(listDataHeader.get(7), baby);
+        listDataChild.put(listDataHeader.get(8), pet);
 
         categoryListAdapter = new CategoryListAdapter(getContext(), listDataHeader, listDataChild);
 
