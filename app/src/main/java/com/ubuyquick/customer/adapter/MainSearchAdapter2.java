@@ -98,6 +98,7 @@ public class MainSearchAdapter2 extends ArrayAdapter {
                 //TODO 2.1
                 final ImageView tv_image = (ImageView) viewInflated.findViewById(R.id.tv_image);
 
+                UniversalImageLoader.setImage(searchProduct.getProductUrl(), tv_image);
                 tv_name.setText(searchProduct.getProductName());
                 tv_measure.setText(searchProduct.getProductMeasure());
                 tv_mrp.setText("\u20B9" + searchProduct.getProductMrp());

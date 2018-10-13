@@ -345,13 +345,9 @@ public class InventoryFragment extends Fragment {
         cakesandpastries = new ArrayList<>();
         cakesandpastries.add("Cakes");
 
-
-
         babyskinhaircare = new ArrayList<>();
         babyskinhaircare.add("Bathing Needs");
         babyskinhaircare.add("Body Care And Others");
-
-
 
         groceriesstaples = new ArrayList<String>();
         groceriesstaples.add("Atta And Other Flours");
@@ -635,7 +631,7 @@ public class InventoryFragment extends Fragment {
                 headerMap.put("Authorization", Credentials.basic("elastic", "IcORsWAWIOYtaZLNpJgbUvw1"));
 
                 HashMap<String, String> queryMap = new HashMap<>();
-                queryMap.put("q", "Products:*" + s.toString() + "*");
+                queryMap.put("q", "Products:* " + s.toString() + "*");
                 queryMap.put("from", "0");
                 queryMap.put("size", "50");
 
