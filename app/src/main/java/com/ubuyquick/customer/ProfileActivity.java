@@ -2,14 +2,15 @@ package com.ubuyquick.customer;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -26,6 +27,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.ubuyquick.customer.auth.LoginActivity;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -59,6 +61,28 @@ public class ProfileActivity extends AppCompatActivity {
                     startActivity(new Intent(ProfileActivity.this, CreditsActivity.class));
                 } else if (position == 3) {
                     startActivity(new Intent(ProfileActivity.this, AddressesActivity.class));
+                } else if (position == 5) {
+                    View viewInflated = LayoutInflater.from(ProfileActivity.this).inflate(R.layout.dialog_referral, null, false);
+
+                    final TextInputEditText email = (TextInputEditText) viewInflated.findViewById(R.id.et_email);
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ProfileActivity.this);
+                    builder.setTitle("Referral email:");
+                    builder.setView(viewInflated);
+                    builder.setNegativeButton("Cancel", null);
+                    builder.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            Map<String, Object> referral = new HashMap<>();
+                            if (!TextUtils.isEmpty(email.getText().toString())) {
+                                referral.put("email", email.getText().toString());
+                                referral.put("referrer", mAuth.getCurrentUser().getPhoneNumber().substring(3));
+                                db.collection("referrals").add(referral);
+                                Toast.makeText(ProfileActivity.this, "Referral submitted. Thank You.", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                    builder.show();
                 } else if (position == 6) {
                     startActivity(new Intent(ProfileActivity.this, ContactUs.class));
                 } else if (position == 8) {
