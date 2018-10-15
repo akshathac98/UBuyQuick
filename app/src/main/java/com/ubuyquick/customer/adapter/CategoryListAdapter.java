@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ubuyquick.customer.R;
@@ -16,6 +17,9 @@ import java.util.List;
 public class CategoryListAdapter extends BaseExpandableListAdapter {
 
     private static final String TAG = "CategoryListAdapter";
+
+    int[] images = {R.mipmap.flour, R.mipmap.beverages, R.mipmap.laundry, R.mipmap.shampoo, R.mipmap.bread, R.mipmap.chips, R.mipmap.noodles,
+            R.mipmap.baby, R.mipmap.pet};
 
     private Context context;
     private List<String> listHeaders;
@@ -95,6 +99,10 @@ public class CategoryListAdapter extends BaseExpandableListAdapter {
 
         TextView lblListHeader = (TextView) convertView
                 .findViewById(R.id.tv_category_name);
+        ImageView img_group = convertView.findViewById(R.id.img_product);
+
+        img_group.setImageDrawable(context.getDrawable(images[groupPosition]));
+
         lblListHeader.setTypeface(null, Typeface.BOLD);
         lblListHeader.setText(headerTitle);
 
