@@ -24,6 +24,7 @@
         android:layout_below="@id/tv_shop_name"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:visibility="invisible"
         android:layout_alignParentEnd="true"
         android:text="Quick Delivery(1hr)"
         android:textColor="@color/colorPrimary"

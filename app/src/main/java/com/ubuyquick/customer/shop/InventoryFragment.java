@@ -68,6 +68,8 @@ public class InventoryFragment extends Fragment {
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
 
+    private boolean quick_delivery;
+
     private Spinner s_categories, s_sub_categories;
     private String category, sub_category, shop_id, shop_vendor;
     private ArrayAdapter<String> arrayAdapter;
@@ -166,6 +168,7 @@ public class InventoryFragment extends Fragment {
 
         shop_id = getArguments().getString("shop_id");
         shop_vendor = getArguments().getString("shop_vendor");
+        quick_delivery = getArguments().getBoolean("quick_delivery");
 
         adAdapter = new AdAdapter(getContext());
         categoryAdapter = new CategoryAdapter(getContext());
@@ -589,6 +592,11 @@ public class InventoryFragment extends Fragment {
         LayoutInflater layoutInflater = getLayoutInflater();
         ViewGroup header = (ViewGroup) inflater.inflate(R.layout.inventory_header, list_categories, false);
         tv_delivery = header.findViewById(R.id.tv_delivery);
+
+        if (quick_delivery) {
+            tv_delivery.setVisibility(View.VISIBLE);
+        }
+
         tv_shop_name = header.findViewById(R.id.tv_shop_name);
         btn_plus = header.findViewById(R.id.btn_plus);
         tv_minimum_order = header.findViewById(R.id.tv_minimum_order);

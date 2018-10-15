@@ -12,8 +12,8 @@
         android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_gravity="center_horizontal"
-        android:background="@android:color/black"
         android:layout_margin="8dp"
+        android:background="@android:color/black"
 
         />
 
@@ -23,77 +23,77 @@
         android:layout_weight="1">
 
         <TextView
-            android:textSize="16sp"
             android:id="@+id/tv_head_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="Product :"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tv_name"
-            android:textSize="16sp"
-            android:layout_toEndOf="@id/tv_head_name"
-            android:layout_marginStart="8dp"
-            android:text="Product Name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/tv_head_name"
+            android:text="Product Name"
+            android:textSize="16sp" />
 
 
         <TextView
-            android:layout_below="@id/tv_name"
             android:id="@+id/tv_head_price"
-            android:layout_marginStart="8dp"
-            android:textSize="16sp"
-            android:text="MRP :"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_marginStart="8dp"
+            android:text="MRP :"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tv_price"
-            android:layout_toEndOf="@id/tv_head_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/tv_name"
             android:layout_marginStart="8dp"
-            android:textSize="16sp"
+            android:layout_toEndOf="@id/tv_head_name"
             android:text="-"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="16sp" />
 
         <TextView
-            android:textSize="16sp"
-            android:layout_below="@id/tv_price"
-            android:layout_marginTop="16dp"
             android:id="@+id/tv_head_measure"
-            android:layout_marginStart="8dp"
-            android:text="Measure :"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_price"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="Measure :"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/et_measure"
-            android:layout_below="@id/tv_head_price"
-            android:layout_toEndOf="@id/tv_head_quantity"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_head_price"
+            android:layout_toEndOf="@id/tv_head_quantity" />
 
         <TextView
-            android:layout_below="@id/et_measure"
             android:id="@+id/tv_head_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_measure"
+            android:layout_alignTop="@id/et_quantity"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:textSize="16sp"
-            android:layout_alignTop="@id/et_quantity"
             android:text="Quantity :"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/et_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/et_measure"
             android:layout_toEndOf="@id/tv_head_quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:inputType="number" />
 
     </RelativeLayout>
 </LinearLayout>
