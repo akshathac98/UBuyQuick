@@ -102,8 +102,11 @@ public class PaymentOptions extends AppCompatActivity {
                                                                             .collection("new_orders").document(timestamp).collection("products")
                                                                             .document(document.getId()).set(newProduct);
                                                                 }
-                                                                setResult(Activity.RESULT_OK);
-                                                                finish();
+//                                                                setResult(Activity.RESULT_OK);
+//                                                                finish();
+                                                                Intent i = new Intent(PaymentOptions.this, OrderPlacedActivity.class);
+                                                                i.putExtra("shop_id", shop_id);
+                                                                startActivity(i);
                                                             }
                                                         });
 

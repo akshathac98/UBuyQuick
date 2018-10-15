@@ -81,7 +81,9 @@
         <activity
             android:name=".SelectShopActivity"
             android:label="Select Shop" />
-        <activity android:name=".SelectListActivity"></activity>
+        <activity android:name=".SelectListActivity" />
+        <activity android:name=".OrderPlacedActivity"
+            android:label="Order Placed"/>
     </application>
 
 </manifest>
