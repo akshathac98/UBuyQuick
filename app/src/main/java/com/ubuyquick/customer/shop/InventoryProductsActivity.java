@@ -53,14 +53,14 @@ public class InventoryProductsActivity extends AppCompatActivity {
         final HashMap<String, Double> priceList = new HashMap<>();
 
         HashMap<String, String> headerMap = new HashMap<>();
-        headerMap.put("Authorization", Credentials.basic("elastic", "IcORsWAWIOYtaZLNpJgbUvw1"));
+        headerMap.put("Authorization", Credentials.basic("elastic", "k0TWsTm4bb59v5JmnbBni27N"));
 
         HashMap<String, String> queryMap = new HashMap<>();
         queryMap.put("q", "message:*" + getIntent().getStringExtra("category") + "*");
         queryMap.put("from", "0");
         queryMap.put("size", "50");
 
-        AndroidNetworking.get("https://08465455b9e04080ada3e4855fc4fc86.ap-southeast-1.aws.found.io:9243/ubq-has/_search")
+        AndroidNetworking.get("https://8ec7da3e09b84f9fabf3785d0ae0cc40.europe-west1.gcp.cloud.es.io:9243/ubq-has/_search")
                 .addQueryParameter(queryMap)
                 .addHeaders(headerMap)
                 .build().getAsJSONObject(new JSONObjectRequestListener() {

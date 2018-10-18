@@ -1,34 +1,23 @@
 package com.ubuyquick.customer;
 
 import android.content.Intent;
-import android.os.Handler;
-import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.ubuyquick.customer.adapter.AdAdapter;
-import com.ubuyquick.customer.adapter.ListProductAdapter;
-import com.ubuyquick.customer.model.ListProduct;
+import com.ubuyquick.customer.model.Ad;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class ShoppingListActivity extends AppCompatActivity {
 
@@ -40,7 +29,7 @@ public class ShoppingListActivity extends AppCompatActivity {
     private boolean doubleBackToExitPressedOnce = false;
     private ArrayAdapter<String> arrayAdapter;
 
-    private List<String> ads;
+    private List<Ad> ads;
     private AdAdapter adAdapter;
 
     private LinearLayout btn_shops, btn_profile, btn_shoppinglist;
@@ -104,13 +93,15 @@ public class ShoppingListActivity extends AppCompatActivity {
     }
 
     private void initialize() {
-        adAdapter = new AdAdapter(ShoppingListActivity.this);
-        rv_ads.setAdapter(adAdapter);
+
         ads = new ArrayList<>();
-        ads.add("");
-        ads.add("");
-        ads.add("");
-        ads.add("");
+        ads.add(new Ad(R.mipmap.haldiram_ad));
+        ads.add(new Ad(R.mipmap.kellogs_ad));
+        ads.add(new Ad(R.mipmap.nandhini_ad));
+        ads.add(new Ad(R.mipmap.oil_ad));
+
+        adAdapter = new AdAdapter(ShoppingListActivity.this, ads);
+        rv_ads.setAdapter(adAdapter);
         adAdapter.setAds(ads);
     }
 

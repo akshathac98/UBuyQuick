@@ -5,22 +5,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.ImageButton;
@@ -31,21 +26,16 @@ import android.widget.Toast;
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.ubuyquick.customer.R;
 import com.ubuyquick.customer.SubCategoryActivity;
 import com.ubuyquick.customer.adapter.AdAdapter;
 import com.ubuyquick.customer.adapter.CategoryAdapter;
 import com.ubuyquick.customer.adapter.CategoryListAdapter;
-import com.ubuyquick.customer.adapter.MainSearchAdapter2;
 import com.ubuyquick.customer.adapter.MainSearchAdapter3;
 import com.ubuyquick.customer.adapter.ShopProductAdapter;
+import com.ubuyquick.customer.model.Ad;
 import com.ubuyquick.customer.model.Category;
 import com.ubuyquick.customer.model.MainSearchProduct;
 import com.ubuyquick.customer.model.ShopProduct;
@@ -70,11 +60,12 @@ public class InventoryFragment extends Fragment {
 
     private boolean quick_delivery;
 
+    private List<Ad> ads;
+
     private Spinner s_categories, s_sub_categories;
     private String category, sub_category, shop_id, shop_vendor;
     private ArrayAdapter<String> arrayAdapter;
 
-    private List<String> ads;
     private AdAdapter adAdapter;
     private CategoryAdapter categoryAdapter;
     private ArrayAdapter<String> arrayAdapter2;
@@ -170,16 +161,10 @@ public class InventoryFragment extends Fragment {
         shop_vendor = getArguments().getString("shop_vendor");
         quick_delivery = getArguments().getBoolean("quick_delivery");
 
-        adAdapter = new AdAdapter(getContext());
+        adAdapter = new AdAdapter(getContext(), ads);
+
         categoryAdapter = new CategoryAdapter(getContext());
-        ads = new ArrayList<>();
         categories = new ArrayList<>();
-        ads.add("");
-        ads.add("");
-        ads.add("");
-        ads.add("");
-
-
 
         juices = new ArrayList<>();
         juices.add("Concentrates");
@@ -192,8 +177,6 @@ public class InventoryFragment extends Fragment {
 
         healthenergydrinks = new ArrayList<>();
         healthenergydrinks.add("Chocolate And Health");
-
-
 
         laundrydetergents = new ArrayList<>();
         laundrydetergents.add("Detergent Powders");
@@ -223,7 +206,6 @@ public class InventoryFragment extends Fragment {
         otherneeds = new ArrayList<>();
         otherneeds.add("Batteries");
         otherneeds.add("Trash Bags");
-
 
 
         bathbody = new ArrayList<>();
@@ -267,7 +249,6 @@ public class InventoryFragment extends Fragment {
         healthwellness.add("Health Supplements");
 
 
-
         milkproducts = new ArrayList<>();
         milkproducts.add("Lassi And Flavoured Milk And Milk Shakes");
         milkproducts.add("Cream And Whitener");
@@ -292,7 +273,6 @@ public class InventoryFragment extends Fragment {
         jamshoneyspreads.add("Dressing And Dips");
 
 
-
         biscuitscookies = new ArrayList<>();
         biscuitscookies.add("Healthy And Digestive");
         biscuitscookies.add("Cream Biscuits Cookies And Wafers");
@@ -315,8 +295,6 @@ public class InventoryFragment extends Fragment {
         sweets = new ArrayList<>();
         sweets.add("Instant Mixes");
         sweets.add("Sweets");
-
-
 
 
         noodlesvermicelli = new ArrayList<>();
@@ -600,9 +578,18 @@ public class InventoryFragment extends Fragment {
         tv_shop_name = header.findViewById(R.id.tv_shop_name);
         btn_plus = header.findViewById(R.id.btn_plus);
         tv_minimum_order = header.findViewById(R.id.tv_minimum_order);
+
+        ads = new ArrayList<>();
+        ads.add(new Ad(R.mipmap.haldiram_ad));
+        ads.add(new Ad(R.mipmap.kellogs_ad));
+        ads.add(new Ad(R.mipmap.nandhini_ad));
+        ads.add(new Ad(R.mipmap.oil_ad));
+
         rv_ads = header.findViewById(R.id.rv_ads);
         adAdapter.setAds(ads);
         rv_ads.setAdapter(adAdapter);
+
+
         list_categories.addHeaderView(header);
 
         // setting list adapter
@@ -636,14 +623,14 @@ public class InventoryFragment extends Fragment {
                 et_search.setAdapter(searchAdapter);
 
                 HashMap<String, String> headerMap = new HashMap<>();
-                headerMap.put("Authorization", Credentials.basic("elastic", "IcORsWAWIOYtaZLNpJgbUvw1"));
+                headerMap.put("Authorization", Credentials.basic("elastic", "k0TWsTm4bb59v5JmnbBni27N"));
 
                 HashMap<String, String> queryMap = new HashMap<>();
                 queryMap.put("q", "Products:* " + s.toString() + "*");
                 queryMap.put("from", "0");
                 queryMap.put("size", "50");
 
-                AndroidNetworking.get("https://08465455b9e04080ada3e4855fc4fc86.ap-southeast-1.aws.found.io:9243/ubq-has/_search")
+                AndroidNetworking.get("https://8ec7da3e09b84f9fabf3785d0ae0cc40.europe-west1.gcp.cloud.es.io:9243/ubq-has/_search")
                         .addQueryParameter(queryMap)
                         .addHeaders(headerMap)
                         .build().getAsJSONObject(new JSONObjectRequestListener() {
