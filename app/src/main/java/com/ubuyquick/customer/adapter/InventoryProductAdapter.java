@@ -3,25 +3,19 @@ package com.ubuyquick.customer.adapter;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.ubuyquick.customer.R;
 import com.ubuyquick.customer.model.MainSearchProduct;
-import com.ubuyquick.customer.model.NewListProduct;
 import com.ubuyquick.customer.utils.UniversalImageLoader;
 
 import java.util.ArrayList;
@@ -69,8 +63,8 @@ public class InventoryProductAdapter extends RecyclerView.Adapter<InventoryProdu
 
             this.tv_product_name = (TextView) itemView.findViewById(R.id.tv_product_name);
             this.tv_product_mrp = (TextView) itemView.findViewById(R.id.tv_product_mrp);
-            this.tv_product_measure= (TextView) itemView.findViewById(R.id.tv_product_measure);
-            this.img_product= (ImageView) itemView.findViewById(R.id.tv_product_image);
+            this.tv_product_measure = (TextView) itemView.findViewById(R.id.tv_product_measure);
+            this.img_product = (ImageView) itemView.findViewById(R.id.tv_product_image);
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -97,9 +91,16 @@ public class InventoryProductAdapter extends RecyclerView.Adapter<InventoryProdu
                             .setPositiveButton("Add", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    if (et_quantity.getText().toString().isEmpty())
-                                        Toast.makeText(context, "Please enter quantity to add", Toast.LENGTH_SHORT).show();
-                                    else {
+                                    if (et_quantity.getText().toString().isEmpty()) {
+//                                        Toast.makeText(context, "Please enter quantity to add", Toast.LENGTH_SHORT).show();
+                                        Map<String, Object> product = new HashMap<>();
+                                        product.put("product_measure", searchProduct.getProductMeasure());
+                                        product.put("product_name", searchProduct.getProductName());
+                                        product.put("product_quantity", 1);
+                                        product.put("product_mrp", searchProduct.getProductMrp());
+                                        db.collection("customers").document(mAuth.getCurrentUser().getPhoneNumber().substring(3))
+                                                .collection("shop_lists").document(shop_id).collection("lists").add(product);
+                                    } else {
                                         Map<String, Object> product = new HashMap<>();
                                         product.put("product_measure", searchProduct.getProductMeasure());
                                         product.put("product_name", searchProduct.getProductName());
