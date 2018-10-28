@@ -1,12 +1,20 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'ubqcustomer_release'
+            keyPassword 'ajayajay'
+            storeFile file('/home/ajay/Work/UBuyQuick/ubqcustomer_keystore.jks')
+            storePassword 'ajayajay'
+        }
+    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.ubuyquick.customer"
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 1
+        versionCode 3
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -16,6 +24,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
     }
 }
 

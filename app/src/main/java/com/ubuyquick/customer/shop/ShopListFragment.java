@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -32,15 +31,10 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.ubuyquick.customer.CreateListActivity;
 import com.ubuyquick.customer.DeliveryOptionsActivity;
-import com.ubuyquick.customer.Manifest;
 import com.ubuyquick.customer.R;
-import com.ubuyquick.customer.adapter.AdAdapter;
-import com.ubuyquick.customer.adapter.MainSearchAdapter;
 import com.ubuyquick.customer.adapter.MainSearchAdapter2;
 import com.ubuyquick.customer.adapter.ShopListAdapter;
-import com.ubuyquick.customer.adapter.ShopProductAdapter;
 import com.ubuyquick.customer.model.MainSearchProduct;
 import com.ubuyquick.customer.model.ShopProduct;
 
@@ -48,7 +42,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -171,7 +164,7 @@ public class ShopListFragment extends Fragment {
                 HashMap<String, String> queryMap = new HashMap<>();
                 queryMap.put("q", "Products:* " + s.toString() + "*");
                 queryMap.put("from", "0");
-                queryMap.put("size", "50");
+                queryMap.put("size", "200");
 
                 AndroidNetworking.get("https://8ec7da3e09b84f9fabf3785d0ae0cc40.europe-west1.gcp.cloud.es.io:9243/ubq-has/_search")
                         .addQueryParameter(queryMap)
@@ -243,16 +236,16 @@ public class ShopListFragment extends Fragment {
                                     product.put("product_mrp", 0.0);
                                     db.collection("customers").document(mAuth.getCurrentUser().getPhoneNumber().substring(3))
                                             .collection("shop_lists").document(shop_id).collection("lists").add(product)
-                                    .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<DocumentReference> task) {
-                                            shopProducts.add(new ShopProduct(et_search.getText().toString(),
-                                                    Integer.parseInt(et_quantity.getText().toString()), task.getResult().getId(),
-                                                    0.0, et_measure.getText().toString()));
-                                            shopListAdapter.setListProducts(shopProducts);
-                                            et_search.setText("");
-                                        }
-                                    });
+                                            .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<DocumentReference> task) {
+                                                    shopProducts.add(new ShopProduct(et_search.getText().toString(),
+                                                            Integer.parseInt(et_quantity.getText().toString()), task.getResult().getId(),
+                                                            0.0, et_measure.getText().toString()));
+                                                    shopListAdapter.setListProducts(shopProducts);
+                                                    et_search.setText("");
+                                                }
+                                            });
                                 }
                             }
                         });

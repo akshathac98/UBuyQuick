@@ -51,6 +51,7 @@
 
     <AutoCompleteTextView
         android:id="@+id/et_search"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/view"
@@ -59,7 +60,7 @@
 
     <ImageButton
         android:id="@+id/btn_plus"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:layout_alignParentEnd="true"
         android:layout_below="@id/view"
         android:layout_marginTop="4dp"

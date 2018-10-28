@@ -46,6 +46,7 @@
 
             <AutoCompleteTextView
                 android:id="@+id/et_search"
+                android:drawableEnd="@drawable/ic_nav_search"
                 android:layout_toStartOf="@id/btn_plus"
                 android:hint="Start typing to add product"
                 android:textStyle="italic"

@@ -192,7 +192,7 @@ public class InventoryFragment extends Fragment {
         cleaners = new ArrayList<>();
         cleaners.add("Toilet Cleaner");
         cleaners.add("Floor Cleaner");
-        cleaners.add("MultiPurpose Cleaner");
+        cleaners.add("Multipurpose Cleaners");
 
         repellents = new ArrayList<>();
         repellents.add("Mosquito Repellents");
@@ -250,7 +250,7 @@ public class InventoryFragment extends Fragment {
 
 
         milkproducts = new ArrayList<>();
-        milkproducts.add("Lassi And Flavoured Milk And Milk Shakes");
+        milkproducts.add("Lassi And Flavored Milk And Milk Shakes");
         milkproducts.add("Cream And Whitener");
 
         buttercheese = new ArrayList<>();
@@ -333,7 +333,7 @@ public class InventoryFragment extends Fragment {
         groceriesstaples = new ArrayList<String>();
         groceriesstaples.add("Atta And Other Flours");
         groceriesstaples.add("Moong And Toor Dal");
-        groceriesstaples.add("Urad and Channa Dal");
+        groceriesstaples.add("Urad And Channa Dal");
         groceriesstaples.add("Other Pulses");
 
         riceothergrains = new ArrayList<>();
@@ -377,6 +377,9 @@ public class InventoryFragment extends Fragment {
 
         petfood = new ArrayList<>();
         petfood.add("Pigeon Food");
+
+        ArrayList<String> diwali = new ArrayList<>();
+        diwali.add("Haldirams Diwali Gift Packs");
 
         subsubcategories = new HashMap<>();
 
@@ -432,9 +435,11 @@ public class InventoryFragment extends Fragment {
         subsubcategories.put("Ghee And Vanaspathi", gheevanaspathi);
         subsubcategories.put("Spices", spices);
         subsubcategories.put("Salt And Sugar", saltandsugar);
-        subsubcategories.put("Fruits And Vegitables", fruitsandveg);
+        subsubcategories.put("Fruits And Vegetables", fruitsandveg);
 
         subsubcategories.put("Pet Food", petfood);
+
+        subsubcategories.put("Diwali Gift Packs", diwali);
 
     }
 
@@ -525,7 +530,8 @@ public class InventoryFragment extends Fragment {
         staples.add("Ghee And Vanaspathi");
         staples.add("Spices");
         staples.add("Salt And Sugar");
-        staples.add("Fruits And Vegitables");
+        staples.add("Fruits And Vegetables");
+        staples.add("Diwali Gift Packs");
 
         listDataChild.put(listDataHeader.get(0), staples);
         listDataChild.put(listDataHeader.get(1), beverages);
@@ -628,7 +634,7 @@ public class InventoryFragment extends Fragment {
                 HashMap<String, String> queryMap = new HashMap<>();
                 queryMap.put("q", "Products:* " + s.toString() + "*");
                 queryMap.put("from", "0");
-                queryMap.put("size", "50");
+                queryMap.put("size", "200");
 
                 AndroidNetworking.get("https://8ec7da3e09b84f9fabf3785d0ae0cc40.europe-west1.gcp.cloud.es.io:9243/ubq-has/_search")
                         .addQueryParameter(queryMap)

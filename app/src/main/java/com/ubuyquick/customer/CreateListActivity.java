@@ -169,7 +169,7 @@ public class CreateListActivity extends AppCompatActivity {
                 headerMap.put("Authorization", Credentials.basic("elastic", "k0TWsTm4bb59v5JmnbBni27N"));
 
                 HashMap<String, String> queryMap = new HashMap<>();
-                queryMap.put("q", "Products:*" + s.toString() + "*");
+                queryMap.put("q", "Products:* " + s.toString() + "*");
 //                queryMap.put("from", "0");
 //                queryMap.put("size", "6");
 

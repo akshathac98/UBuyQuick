@@ -1,10 +1,9 @@
 package com.ubuyquick.customer.shop;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.error.ANError;
@@ -56,9 +55,9 @@ public class InventoryProductsActivity extends AppCompatActivity {
         headerMap.put("Authorization", Credentials.basic("elastic", "k0TWsTm4bb59v5JmnbBni27N"));
 
         HashMap<String, String> queryMap = new HashMap<>();
-        queryMap.put("q", "message:*" + getIntent().getStringExtra("category") + "*");
+        queryMap.put("q", "Sscat:\"" + getIntent().getStringExtra("category") + "\"");
         queryMap.put("from", "0");
-        queryMap.put("size", "50");
+        queryMap.put("size", "200");
 
         AndroidNetworking.get("https://8ec7da3e09b84f9fabf3785d0ae0cc40.europe-west1.gcp.cloud.es.io:9243/ubq-has/_search")
                 .addQueryParameter(queryMap)
@@ -76,7 +75,7 @@ public class InventoryProductsActivity extends AppCompatActivity {
                         double product_mrp = productObj.getJSONObject("_source").getDouble("Price");
 
                         priceList.put(product_name, productObj.getJSONObject("_source").getDouble("Price"));
-                        products.add(new MainSearchProduct(product_name, product_mrp, product_measure, 1, image_url ));
+                        products.add(new MainSearchProduct(product_name, product_mrp, product_measure, 1, image_url));
                     }
                     productAdapter.setProducts(products);
                 } catch (JSONException e) {
