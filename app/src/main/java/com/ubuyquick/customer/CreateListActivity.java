@@ -2,11 +2,10 @@ package com.ubuyquick.customer;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,19 +13,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.error.ANError;
-import com.androidnetworking.interfaces.JSONArrayRequestListener;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -35,10 +31,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.ubuyquick.customer.adapter.ListProductAdapter;
 import com.ubuyquick.customer.adapter.MainSearchAdapter;
 import com.ubuyquick.customer.adapter.NewListProductAdapter;
-import com.ubuyquick.customer.model.ListProduct;
 import com.ubuyquick.customer.model.MainSearchProduct;
 import com.ubuyquick.customer.model.NewListProduct;
 
@@ -47,7 +41,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -166,14 +159,14 @@ public class CreateListActivity extends AppCompatActivity {
 */
 
                 HashMap<String, String> headerMap = new HashMap<>();
-                headerMap.put("Authorization", Credentials.basic("elastic", "k0TWsTm4bb59v5JmnbBni27N"));
+                headerMap.put("Authorization", Credentials.basic(getString(R.string.elastic_user), getString(R.string.elastic_password)));
 
                 HashMap<String, String> queryMap = new HashMap<>();
                 queryMap.put("q", "Products:* " + s.toString() + "*");
 //                queryMap.put("from", "0");
 //                queryMap.put("size", "6");
 
-                AndroidNetworking.get("https://8ec7da3e09b84f9fabf3785d0ae0cc40.europe-west1.gcp.cloud.es.io:9243/ubq-has/_search")
+                AndroidNetworking.get(getString(R.string.elastic_host) + "/" + getString(R.string.elastic_index) + "/_search")
                         .addQueryParameter(queryMap)
                         .addHeaders(headerMap)
                         .build().getAsJSONObject(new JSONObjectRequestListener() {

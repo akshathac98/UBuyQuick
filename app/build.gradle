@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'ubqcustomer_release'
             keyPassword 'ajayajay'
-            storeFile file('/home/ajay/Work/UBuyQuick/ubqcustomer_keystore.jks')
+            storeFile file('/home/ajay/Work/UBuyQuick/ubqcustomer_release.jks')
             storePassword 'ajayajay'
         }
     }
@@ -14,10 +14,11 @@ android {
         applicationId "com.ubuyquick.customer"
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 3
+        versionCode 10
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+        signingConfig signingConfigs.config
     }
     buildTypes {
         release {
@@ -30,6 +31,8 @@ android {
         // Or, if you prefer, you can continue to check for errors in release builds,
         // but continue the build even when errors are found:
         abortOnError false
+    }
+    productFlavors {
     }
 }
 

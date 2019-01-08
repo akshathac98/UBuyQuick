@@ -61,4 +61,10 @@
     <string name="title_activity_splash">UBuyQuick</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="elastic_host">https://630fcc94d71d4a21b6c0461aaf7dc4dc.ap-southeast-1.aws.found.io:9243</string>
+    <string name="elastic_user">elastic</string>
+    <string name="elastic_password">ngiGN1iRk5YAXeGMBbEjyVs5</string>
+    <string name="elastic_index">ubq-has</string>
+
 </resources>

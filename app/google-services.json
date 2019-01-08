@@ -47,6 +47,22 @@
           }
         },
         {
+          "client_id": "893027912879-labsfd96pksqpkaogndsrvckropi2c7g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ubuyquick.customer",
+            "certificate_hash": "146fdeeeda57e04335f11b188244727f39b9a3c6"
+          }
+        },
+        {
+          "client_id": "893027912879-agsjouei8eae65safron5in93c85qf3v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ubuyquick.customer",
+            "certificate_hash": "b7dc0fd1470bc8302d0a8fc746f067b308447ae5"
+          }
+        },
+        {
           "client_id": "893027912879-hvi1l6kfcnfni25r9o2ekror4um61man.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -213,7 +213,7 @@ public class VerifyOTPActivity extends AppCompatActivity {
             @Override
             public void onVerificationFailed(FirebaseException e) {
                 Log.d(TAG, "onVerificationFailed: " + e.getLocalizedMessage());
-                Toast.makeText(VerifyOTPActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(VerifyOTPActivity.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         };
 
